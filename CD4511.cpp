@@ -53,4 +53,6 @@ void CD4511::display(int Z, U)
 void CD4511::test()
 {
 	digitalWrite(_LT, 0);
+	delay(100);
+	digitalWrite(_LT, 1);
 }
