@@ -6,12 +6,15 @@
 class CD4511
 {
    public:
-     CD4511(int A, B, C, D, LT, D1, D2);
+     CD4511(int A, int B, int C, int D, int LT, int D1, int D2);
+     void start();
      void cleardisplay();
-     void display(int const Z, U);
+     void display(long Z, int poz);
      void test();
    private:
-     int A, B, C, D, LT, D1, D2
+     int _A, _B, _C, _D, _LT, _D1, _D2;
+     long Z;
+     int poz;
 };
 
 #endif
