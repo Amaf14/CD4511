@@ -5,15 +5,8 @@
 #endif
 #include "CD4511.h"
 
-CD4511::CD4511(int const A, B, C, D, LT, D1, D2)
+CD4511::CD4511(int A, int B, int C, int D, int LT, int D1, int D2)
 {
-   pinMode(A, OUTPUT);
-   pinMode(B, OUTPUT);
-   pinMode(C, OUTPUT);
-   pinMode(D, OUTPUT);
-   pinMode(LT, OUTPUT)
-   pinMode(D1, OUTPUT);
-   pinMode(D2, OUTPUT);
    _A= A;
    _B= B;
    _C= C;
@@ -23,31 +16,44 @@ CD4511::CD4511(int const A, B, C, D, LT, D1, D2)
    _D2= D2;
 }
 
-void CD4511::cleardisplay()
+void CD4511::start()
 {
-	_A= 0;
-	_B= 0;
-	_C= 0;
-	_D= 0;
-	_LT= 1;
+	pinMode(_A, OUTPUT);
+	pinMode(_B, OUTPUT);
+    	pinMode(_C, OUTPUT);
+    	pinMode(_D, OUTPUT);
+    	pinMode(_LT, OUTPUT);
+	pinMode(_D1, OUTPUT);
+	pinMode(_D2, OUTPUT);
 }
 
-void CD4511::display(int Z, U)
+void CD4511::cleardisplay()
 {
-	digitalWrite(_A, U/1000);
-	digitalWrite(_B, U/100%10);
-	digitalWrite(_C, U/10%10);
-	digitalWrite(_D, U%10);
-	digitalWrite(_D2, 1);
-	delay(50);
-	digitalWrite(_D2, 0);
-	digitalWrite(_A, Z/1000);
+	digitalWrite(_A, 0);
+	digitalWrite(_B, 0);
+	digitalWrite(_C, 0);
+	digitalWrite(_D, 0);
+	digitalWrite(_LT, 1);
+}
+
+void CD4511::display(long Z, int poz)
+{
+	digitalWrite(_A, Z/1000%10);
 	digitalWrite(_B, Z/100%10);
 	digitalWrite(_C, Z/10%10);
 	digitalWrite(_D, Z%10);
-	digitalWrite(_D1, 1);
-	delay(50);
-	digitalWrite(_D1, 0);
+	if(poz == 1)
+	{
+		digitalWrite(_D1, 1);
+		delay(50);
+		digitalWrite(_D1, 0);
+	}
+	else
+	{
+		digitalWrite(_D2, 1);
+		delay(50);
+		digitalWrite(_D2, 0);
+	}
 }
 
 void CD4511::test()
