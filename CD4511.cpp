@@ -62,6 +62,20 @@ void CD4511::test()
 	digitalWrite(_LT, 1);
 }
 
+//not working yet for some reason
+int CD4511::tobin(int x)
+{
+	int r=1000;
+	long p=90000;
+	while(x!=0)
+	{
+		p+=x%2*r;
+		r/=10;
+		x/=2;
+	}
+	return p;
+}
+
 void CD4511::binlist()
 { 
         long v[]={90000, 91000, 90100, 91100, 90010, 91010, 90110, 91110, 90001, 91001};
