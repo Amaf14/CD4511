@@ -1,0 +1,2 @@
+for (i=_D1;i<=_D1+_N;i++)
+     pinMode(i, OUTPUT);
