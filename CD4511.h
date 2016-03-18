@@ -11,9 +11,10 @@ class CD4511
      void cleardisplay();
      void display(long Z, int poz);
      void test();
+     void binlist();
    private:
      int _A, _B, _C, _D, _LT, _D1, _D2;
-     long Z;
+     long Z, v[11];
      int poz;
 };
 
