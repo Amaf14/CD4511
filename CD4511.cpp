@@ -15,6 +15,15 @@ CD4511::CD4511(int A, int B, int C, int D, int LT, int D1, int D2)
    _D2= D2;
 }
 
+CD4511::CD4511(int A, int B, int C, int D, int D1)
+{
+   _A= A;
+   _B= B;
+   _C= C;
+   _D= D;
+   _D1= D1;
+}
+
 void CD4511::start()
 {
 	pinMode(_A, OUTPUT);
