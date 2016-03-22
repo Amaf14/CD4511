@@ -8,7 +8,7 @@ class CD4511
    public:
    //proto
      CD4511::CD4511(int A, int B, int C, int D, int D1, int nr);
-     CD4511(int A, int B, int C, int D, int D1, int D2);
+     //CD4511(int A, int B, int C, int D, int D1, int D2);
      //for a single digit
      CD4511(int A, int B, int C, int D, int D1);
      void start();
