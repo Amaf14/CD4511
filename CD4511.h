@@ -7,6 +7,8 @@ class CD4511
 {
    public:
      CD4511(int A, int B, int C, int D, int LT, int D1, int D2);
+     //for a single digit
+     CD4511(int A, int B, int C, int D, int LT, int D1);
      void start();
      void cleardisplay();
      void display(long Z, int poz);
