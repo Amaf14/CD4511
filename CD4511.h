@@ -16,9 +16,9 @@ class CD4511
      int tobin(int x);
      void binlist();
    private:
-     int _A, _B, _C, _D, _LT, _D1, _D2;
+     int _A, _B, _C, _D, _LT, _D1, _D2, _g[5];
      long Z, v[11];
-     int poz, x ,r, p;
+     int poz, x ,r, p, i, j;
 };
 
 #endif
