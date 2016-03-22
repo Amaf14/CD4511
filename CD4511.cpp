@@ -50,6 +50,10 @@ void CD4511::start()
     	pinMode(_LT, OUTPUT);
 	pinMode(_D1, OUTPUT);
 	pinMode(_D2, OUTPUT);
+        while(_v[i]!=0)
+           pinMode(_v[i])
+
+
 }
 
 void CD4511::cleardisplay()
