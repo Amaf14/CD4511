@@ -4,6 +4,7 @@
 #endif
 #include "CD4511.h"
 
+//for two digits
 CD4511::CD4511(int A, int B, int C, int D, int LT, int D1, int D2)
 {
    _A= A;
@@ -86,6 +87,7 @@ int CD4511::tobin(int x)
 	return p;
 }
 
+//working 
 void CD4511::binlist()
 { 
         long v[]={90000, 91000, 90100, 91100, 90010, 91010, 90110, 91110, 90001, 91001};
