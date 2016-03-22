@@ -5,30 +5,15 @@
 #endif
 #include "CD4511.h"
 
-//for two digits
-/*CD4511::CD4511(int A, int B, int C, int D, int D1, int D2)
-{
-   _A= A;
-   _B= B;
-   _C= C;
-   _D= D;
-   _D1= D1;
-   _D2= D2;
-}*/
 
-//proto
 CD4511::CD4511(int A, int B, int C, int D, int D1, int nr)
 {
    _A= A;
    _B= B;
    _C= C;
    _D= D;
-   j=0;
-   for(i=D1;i<=D1+nr;i++)
-      {
-          _g[j]=i;
-          j++;
-      }
+   _D1= D1;//D1 is the first digit chatode
+   _nr= nr;//nr is the total number of digits
 }
 
 //for a single digit
@@ -45,15 +30,16 @@ void CD4511::start()
 {
 	pinMode(_A, OUTPUT);
 	pinMode(_B, OUTPUT);
-    	pinMode(_C, OUTPUT);
-    	pinMode(_D, OUTPUT);
-	pinMode(_D1, INPUT);
-	pinMode(_D2, INPUT);
-        while(v[i]!=0)
-           {
-              pinMode(v[i], INPUT);
-              i++;
-           }
+	pinMode(_C, OUTPUT);
+	pinMode(_D, OUTPUT);
+	j=0;
+    for(i=_D1;i<=_D1+_nr-1;i++)
+      {
+		  g[j]=i;
+		  pinMode(g[j], OUTPUT);
+		  digitalWrite(g[j], HIGH);
+          j++;
+      }
 }
 
 void CD4511::cleardisplay()
@@ -62,6 +48,7 @@ void CD4511::cleardisplay()
 	digitalWrite(_B, 0);
 	digitalWrite(_C, 0);
 	digitalWrite(_D, 0);
+	//show '0'
 }
 
 void CD4511::display(long Z, int poz)
@@ -70,12 +57,12 @@ void CD4511::display(long Z, int poz)
 	digitalWrite(_B, Z/100%10);
 	digitalWrite(_C, Z/10%10);
 	digitalWrite(_D, Z%10);
-	digitalWrite(poz, 1);
-	delay(50);
-	digitalWrite(poz, 0);
+	digitalWrite(g[poz], 0);
+	delay(3);
+	digitalWrite(g[poz], 1);
 }
 
-//proto
+//not done yet
 void CD4511::test()
 {
 	delay(100);
@@ -95,7 +82,7 @@ int CD4511::tobin(int x)
 	return p;
 }
 
-//not working 
+//not working again
 void CD4511::binlist()
 { 
         long v[]={90000, 91000, 90100, 91100, 90010, 91010, 90110, 91110, 90001, 91001};
