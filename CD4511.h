@@ -6,9 +6,11 @@
 class CD4511
 {
    public:
-     CD4511(int A, int B, int C, int D, int LT, int D1, int D2);
+   //proto
+     CD4511::CD4511(int A, int B, int C, int D, int D1, int nr);
+     CD4511(int A, int B, int C, int D, int D1, int D2);
      //for a single digit
-     CD4511(int A, int B, int C, int D, int LT, int D1);
+     CD4511(int A, int B, int C, int D, int D1);
      void start();
      void cleardisplay();
      void display(long Z, int poz);
@@ -16,7 +18,7 @@ class CD4511
      int tobin(int x);
      void binlist();
    private:
-     int _A, _B, _C, _D, _LT, _D1, _D2, _g[5];
+     int _A, _B, _C, _D, _D1, _D2, _g[5];
      long Z, v[11], p;
      int poz, x, r, i, j;
 };
