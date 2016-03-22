@@ -26,7 +26,7 @@ CD4511::CD4511(int A, int B, int C, int D, int LT, int D1, int nr)
    j=0;
    for(i=D1;i<=D1+nr;i++)
       {
-          _v[j]=i;
+          _g[j]=i;
           j++;
       }
 }
