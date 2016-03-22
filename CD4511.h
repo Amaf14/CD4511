@@ -17,8 +17,8 @@ class CD4511
      void binlist();
    private:
      int _A, _B, _C, _D, _LT, _D1, _D2, _g[5];
-     long Z, v[11];
-     int poz, x ,r, p, i, j;
+     long Z, v[11], p;
+     int poz, x, r, i, j;
 };
 
 #endif
