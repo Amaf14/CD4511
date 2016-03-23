@@ -69,15 +69,15 @@ void CD4511::test()
 }
 
 //not working yet for some reason
-int CD4511::tobin(int x)
+int CD4511::tobin(int i)
 {
-	int i=1000;
+	int j=1000;
 	long p=90000;
-	while(x!=0)
+	while(i!=0)
 	{
-		p+=x%2*i;
-		i/=10;
-		x/=2;
+		p+=x%2*j;
+		j/=10;
+		i/=2;
 	}
 	return p;
 }
