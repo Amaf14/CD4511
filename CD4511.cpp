@@ -1,3 +1,12 @@
+/*********************************************************************
+This is an example sketch for a BCD driver.
+
+The driver uses four pins to comunnicate with the Arduino.
+
+Written by Amaf14.
+BSD license, check license.txt for more information
+All text above, and the splash screen must be included in any redistribution
+*********************************************************************/
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
 #else
