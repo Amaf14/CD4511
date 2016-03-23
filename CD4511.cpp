@@ -17,14 +17,14 @@ CD4511::CD4511(int A, int B, int C, int D, int D1, int nr)
 }
 
 //for a single digit
-CD4511::CD4511(int A, int B, int C, int D, int D1)
+/*CD4511::CD4511(int A, int B, int C, int D, int D1)
 {
    _A= A;
    _B= B;
    _C= C;
    _D= D;
    _D1= D1;
-}
+}*/
 
 void CD4511::start()
 {
