@@ -68,7 +68,7 @@ void CD4511::test()
 	delay(100);
 }
 
-//should be a binnary converter
+//should be a binary converter
 //not working yet for some reason
 int CD4511::tobin(int i)
 {
