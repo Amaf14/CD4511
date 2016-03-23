@@ -71,12 +71,12 @@ void CD4511::test()
 //not working yet for some reason
 int CD4511::tobin(int x)
 {
-	int r=1000;
+	int i=1000;
 	long p=90000;
 	while(x!=0)
 	{
-		p+=x%2*r;
-		r/=10;
+		p+=x%2*i;
+		i/=10;
 		x/=2;
 	}
 	return p;
