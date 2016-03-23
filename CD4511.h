@@ -18,7 +18,7 @@ class CD4511
    
    private:
    int _A, _B, _C, _D, _D1, _D2, g[5], _nr;
-   long Z, v[11], p;
+   long Z, _v[11], p;
    int poz, i, j;
 };
 
