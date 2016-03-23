@@ -51,12 +51,12 @@ void CD4511::cleardisplay()
 	//show '0'
 }
 
-void CD4511::display(long Z, int poz)
+void CD4511::display(long p, int poz)
 {
-	digitalWrite(_A, Z/1000%10);
-	digitalWrite(_B, Z/100%10);
-	digitalWrite(_C, Z/10%10);
-	digitalWrite(_D, Z%10);
+	digitalWrite(_A, p/1000%10);
+	digitalWrite(_B, p/100%10);
+	digitalWrite(_C, p/10%10);
+	digitalWrite(_D, p%10);
 	digitalWrite(g[poz], 0);
 	delay(3);
 	digitalWrite(g[poz], 1);
