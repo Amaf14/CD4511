@@ -84,8 +84,7 @@ int CD4511::tobin(int i)
 }
 
 //not working again
-void CD4511::binlist(long v[10])
-{ 
-	_v[]=v[];
+void CD4511::binlist()
+{
         _v[]={90000, 91000, 90100, 91100, 90010, 91010, 90110, 91110, 90001, 91001};
 }
